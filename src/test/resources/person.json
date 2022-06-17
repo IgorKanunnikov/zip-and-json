@@ -1,0 +1,35 @@
+{
+  "motherMaidenName": "test",
+  "name": [
+    {
+      "salutation": "MR",
+      "givenName": "Ivanov",
+      "surname": "Ivan",
+      "middleName": "Ivanovich"
+    }
+  ],
+  "demographics": [
+    {
+      "residenceDurationInYears": 10,
+      "dateOfBirth": "1986-07-02",
+      "countryOfBirth": "RUSSIA",
+      "gender": "MALE",
+      "correspondenceLanguageCode": "RUSSIAN_LANGUAGE",
+      "maritalStatus": "MARRIED"
+    }
+  ],
+  "email": [
+    {
+      "emailAddress": "testemail@email.io",
+      "isPreferredEmailAddress": true
+    }
+  ],
+  "identificationDocumentDetails": [
+    {
+      "idType": "PASSPORT",
+      "idNumber": "7645112784",
+      "idIssueCountry": "RUSSIA",
+      "isPrimaryId": true
+    }
+  ]
+}
