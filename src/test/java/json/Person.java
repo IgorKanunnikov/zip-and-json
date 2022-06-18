@@ -10,50 +10,50 @@ public class Person {
         this.motherMaidenName = motherMaidenName;
     }
 
-    public Person.name getName() {
+    public Name getName() {
         return name;
     }
 
-    public void setName(Person.name name) {
+    public void setName(Name name) {
         this.name = name;
     }
 
-    public Person.demographics getDemographics() {
+    public Demographics getDemographics() {
         return demographics;
     }
 
-    public void setDemographics(Person.demographics demographics) {
+    public void setDemographics(Demographics demographics) {
         this.demographics = demographics;
     }
 
-    public Person.email getEmail() {
+    public Email getEmail() {
         return email;
     }
 
-    public void setEmail(Person.email email) {
+    public void setEmail(Email email) {
         this.email = email;
     }
 
-    public Person.identificationDocumentDetails getIdentificationDocumentDetails() {
+    public IdentificationDocumentDetails getIdentificationDocumentDetails() {
         return identificationDocumentDetails;
     }
 
-    public void setIdentificationDocumentDetails(Person.identificationDocumentDetails identificationDocumentDetails) {
+    public void setIdentificationDocumentDetails(IdentificationDocumentDetails identificationDocumentDetails) {
         this.identificationDocumentDetails = identificationDocumentDetails;
     }
 
     private String motherMaidenName;
-    private name name;
-    private demographics demographics;
-    private email email;
-    private identificationDocumentDetails identificationDocumentDetails;
-    static class name {
+    private Name name;
+    private Demographics demographics;
+    private Email email;
+    private IdentificationDocumentDetails identificationDocumentDetails;
+    static class Name {
         private String salutation;
         private String givenName;
         private String surname;
         private String middleName;
     }
-    static class demographics {
+    static class Demographics {
         private Integer residenceDurationInYears;
         private String dateOfBirth;
         private String countryOfBirth;
@@ -61,11 +61,11 @@ public class Person {
         private String correspondenceLanguageCode;
         private String maritalStatus;
     }
-    static class email {
+    static class Email {
         private String emailAddress;
         private Boolean isPreferredEmailAddress;
     }
-    static class identificationDocumentDetails {
+    static class IdentificationDocumentDetails {
         private String idType;
         private String idNumber;
         private String idIssueCountry;

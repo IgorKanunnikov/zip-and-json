@@ -40,11 +40,10 @@ public class ZipReadTests {
         }
     }
 
-    @DisplayName("Check PDF")
+    @DisplayName("Check PDF") // 'ZipFile' used without 'try'-with-resources statement, UPDATED
     @Test
     void checkPDF() {
-        try {
-            ZipFile file = new ZipFile(Objects.requireNonNull(classLoader.getResource("example.zip")).getFile());
+        try(ZipFile file = new ZipFile(Objects.requireNonNull(classLoader.getResource("example.zip")).getFile())) {
             ZipEntry entry = file.getEntry("SamplePDF.pdf");
             PDF pdf;
             try (InputStream stream = file.getInputStream(entry)) {
@@ -60,10 +59,8 @@ public class ZipReadTests {
     @DisplayName("Check CSV")
     @Test
     void checkCSV() throws Exception {
-        try {
-            ZipFile file = new ZipFile(Objects.requireNonNull(classLoader.getResource("example.zip")).getFile());
+        try (ZipFile file = new ZipFile(Objects.requireNonNull(classLoader.getResource("example.zip")).getFile())){
             ZipEntry entry = file.getEntry("SampleCSV.csv");
-
             List<String[]> list;
             try (InputStream stream = file.getInputStream(entry)) {
                 CSVReader reader = new CSVReader(new InputStreamReader(stream));
@@ -72,7 +69,6 @@ public class ZipReadTests {
             assertThat(list).contains(
                     new String[]{"5", "Holmes HEPA Air Purifier", "Carlos Soltero", "515", "30.94", "21.78", "5.94", "Nunavut", "Appliances", "0.5"}
             );
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -81,8 +77,7 @@ public class ZipReadTests {
     @DisplayName("Check XLS")
     @Test
     void checkXLS(){
-        try {
-            ZipFile file = new ZipFile(Objects.requireNonNull(classLoader.getResource("example.zip")).getFile());
+        try(ZipFile file = new ZipFile(Objects.requireNonNull(classLoader.getResource("example.zip")).getFile())) {
             ZipEntry entry = file.getEntry("SampleXLS.xls");
             XLS xls;
             try (InputStream stream = file.getInputStream(entry)) {

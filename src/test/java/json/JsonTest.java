@@ -9,6 +9,8 @@ import java.io.InputStreamReader;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class JsonTest {
     ClassLoader classLoader = JsonTest.class.getClassLoader();
@@ -19,6 +21,8 @@ public class JsonTest {
         ObjectMapper objectMapper = new ObjectMapper();
         assert is != null;
         JsonNode jsonNode = objectMapper.readTree(new InputStreamReader(is, UTF_8));
+
+        assertEquals("test", jsonNode.get("motherMaidenName").asText()); //Junit assert
 
         assertThat(jsonNode.get("motherMaidenName").asText()).isEqualTo("test");
         assertThat(jsonNode.findValue("name").findValue("surname").asText()).isEqualTo("Ivan");
